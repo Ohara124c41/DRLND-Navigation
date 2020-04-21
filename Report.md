@@ -22,13 +22,9 @@ The state space has 37 dimensions and contains the agent's velocity, along with 
 The task is episodic, and in order to solve the environment, your agent must get an average score of +13 over 100 consecutive episodes.
 
 
-## Environment details
+## Environment Details
 
-The environment is based on [Unity ML-agents](https://github.com/Unity-Technologies/ml-agents)
-
-Note: The project environment provided by Udacity is similar to, but not identical to the Banana Collector environment on the Unity ML-Agents GitHub page.
-
-> The Unity Machine Learning Agents Toolkit (ML-Agents) is an open-source Unity plugin that enables games and simulations to serve as environments for training intelligent agents. Agents can be trained using reinforcement learning, imitation learning, neuroevolution, or other machine learning methods through a simple-to-use Python API.
+This project was completed using the Udacity Workspace with GPU processing. [Unity ML-agents](https://github.com/Unity-Technologies/ml-agents) is used at the baseline for creating the environment.
 
 A reward of +1 is provided for collecting a yellow banana, and a reward of -1 is provided for collecting a blue banana. Thus, the goal of the agent is to collect as many yellow bananas as possible while avoiding blue bananas.
 
@@ -157,6 +153,9 @@ Total Training time = 18.7 min
 
 The target episodes was 1800, meaning this implementation is **2.472x more performant** than required.
 
+<img src="results.png" width="650">
+
+From the image above, we can see that the agent is quite confused even though the state space is relatively small for the next immediate action. Therefore, additional models should be explored and are suggested in the Future Work section below.
 
 ### Future Work
 
@@ -169,7 +168,7 @@ A3C consists of multiple independent agents(networks) with their own weights, wh
 
 - [Deep Deterministic Policy Gradient (DDPG)](https://spinningup.openai.com/en/latest/algorithms/ddpg.html)
 
-> Deep Deterministic Policy Gradient (DDPG) is an algorithm which concurrently learns a Q-function and a policy. It uses off-policy data and the Bellman equation to learn the Q-function, and uses the Q-function to learn the policy.This approach is closely connected to Q-learning, and is motivated the same way: if you know the optimal action-value function Q^\*(s,a), then in any given state, the optimal action a^\*(s) can be found. DDPG interleaves learning an approximator to Q^*(s,a) with learning an approximator to a^*(s), and it does so in a way which is specifically adapted for environments with continuous action spaces. When there are a finite number of discrete actions, the max poses no problem, because we can just compute the Q-values for each action separately and directly compare them. Because the action space is continuous, the function Q^*(s,a) is presumed to be differentiable with respect to the action argument. This allows us to set up an efficient, gradient-based learning rule for a policy \mu(s) which exploits that fact. Then, instead of running an expensive optimization subroutine each time we wish to compute \max_a Q(s,a), we can approximate it with \max_a Q(s,a) \approx Q(s,\mu(s)).
+> Deep Deterministic Policy Gradient (DDPG) is an algorithm which concurrently learns a Q-function and a policy. It uses off-policy data and the Bellman equation to learn the Q-function, and uses the Q-function to learn the policy.This approach is closely connected to Q-learning, and is motivated the same way: if you know the optimal action-value function Q^\*(s,a), then in any given state, the optimal action a^\*(s) can be found. DDPG interleaves learning an approximator to Q^\*(s,a) with learning an approximator to a^\*(s), and it does so in a way which is specifically adapted for environments with continuous action spaces. When there are a finite number of discrete actions, the max poses no problem, because we can just compute the Q-values for each action separately and directly compare them. Because the action space is continuous, the function Q^*(s,a) is presumed to be differentiable with respect to the action argument. This allows us to set up an efficient, gradient-based learning rule for a policy \mu(s) which exploits that fact. Then, instead of running an expensive optimization subroutine each time we wish to compute \max_a Q(s,a), we can approximate it with \max_a Q(s,a) \approx Q(s,\mu(s)).
 
 
 
