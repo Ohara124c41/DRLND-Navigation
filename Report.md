@@ -92,7 +92,7 @@ As we saw, the first component of the TD Error (TD stands for Temporal Differenc
 
 We move the output closer to the target, but we also move the target. So, we end up chasing the target and we get a highly oscillated training process. Wouldn’t be great to keep the target fixed as we train the network. Well, DeepMind did exactly that. Instead of using one Neural Network, it uses two. One as the main Deep Q Network and a second one (called Target Network) to update exclusively and periodically the weights of the target. This technique is called Fixed Q-Targets. In fact, the weights are fixed for the largest part of the training and they updated only once in a while. The image below demonstrates the general architecture.
 
-<img src="fixedQ.png" width="650">
+<img src="fixedQ.PNG" width="650">
 
 
 ### Code Implementation
